@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-export const { API_BASEPATH } = process.env.CONFIG;
+const { API_BASEPATH } = process.env.CONFIG;
 
 export const auctionsListApi = createApi({
   reducerPath: 'auctionsList',

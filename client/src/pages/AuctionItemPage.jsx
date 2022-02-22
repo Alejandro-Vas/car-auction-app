@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 function AuctionItemPage() {
   const params = useParams();
@@ -10,11 +10,20 @@ function AuctionItemPage() {
         Auction Item page
       </div>
       <h2>
-        Товар №
+        Лот №
         {' '}
         {prodId}
       </h2>
-      ;
+
+      <Link to="/">
+        <button
+          type="button"
+        >
+          На главную
+        </button>
+
+      </Link>
+
     </>
   );
 }
