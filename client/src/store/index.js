@@ -1,13 +1,10 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import promiseMiddleware from 'redux-promise';
-import thunk from 'redux-thunk';
-import rootReducer from '../reducers';
+import { configureStore } from '@reduxjs/toolkit';
+import { auctionsListApi } from '../reducers/auctionsListApi/auctionsListApi';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-const store = createStore(
-  rootReducer,
-  composeEnhancers(applyMiddleware(thunk, promiseMiddleware)),
-);
-
+const store = configureStore({
+  reducer: {
+    [auctionsListApi.reducerPath]: auctionsListApi.reducer,
+  },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(auctionsListApi.middleware),
+});
 export default store;
