@@ -1,27 +1,31 @@
 import { Link } from 'react-router-dom';
+import { Box } from '@mui/material';
 import PropTypes from 'prop-types';
+
+const { IMAGES_BASEPATH } = process.env.CONFIG;
 
 function AuctionItem(props) {
   const {
     auction: {
-      title, id, bid, finishTime,
+      title, id, bid, finishTime, imgUrl,
     },
   } = props;
   return (
-    <>
-      <div>{title}</div>
+
+    <Box sx={{
+      width: 300,
+      height: 200,
+      backgroundImage: `url(${IMAGES_BASEPATH}${imgUrl})`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      borderRadius: 3,
+    }}
+    >
+      <Link to={`${id}`}><div>{title}</div></Link>
       <div>{id}</div>
       <div>{bid}</div>
       <div>{finishTime}</div>
-
-      <Link to={`${id}`}>
-        <button
-          type="button"
-        >
-          подробнее
-        </button>
-      </Link>
-    </>
+    </Box>
   );
 }
 
@@ -33,5 +37,6 @@ AuctionItem.propTypes = {
     id: PropTypes.number.isRequired,
     bid: PropTypes.number.isRequired,
     finishTime: PropTypes.number.isRequired,
+    imgUrl: PropTypes.string.isRequired,
   }).isRequired,
 };

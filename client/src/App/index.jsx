@@ -13,9 +13,7 @@ function App() {
           <Typography variant="h1" fontSize="h3.fontSize">
             Аукционы
           </Typography>
-
         </Box>
-
         <Box mb={3}>
           <Divider />
         </Box>
