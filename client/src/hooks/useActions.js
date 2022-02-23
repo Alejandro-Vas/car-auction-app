@@ -1,8 +1,9 @@
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { searchQueryActions } from '../reducers/searchQuerySlice/searchQuerySlice';
 
 const AllActions = {
-
+  ...searchQueryActions,
 };
 
 const useActions = () => {
