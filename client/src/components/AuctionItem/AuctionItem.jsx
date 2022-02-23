@@ -11,15 +11,25 @@ function AuctionItem(props) {
     auction: {
       title, id, bid, finishTime, imgUrl,
     },
+    isMainPage,
   } = props;
+
+  const renderWidth = isMainPage ? 375 : 675;
+  const renderHeight = isMainPage ? 250 : 400;
+
+  const renderTitle = (
+    <div>
+      {title}
+    </div>
+  );
 
   return (
     <Box sx={{
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
-      width: 375,
-      height: 250,
+      width: renderWidth,
+      height: renderHeight,
       backgroundImage: `url(${IMAGES_BASEPATH}${imgUrl})`,
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
@@ -33,7 +43,14 @@ function AuctionItem(props) {
         backgroundColor: '#F0F0F0',
       }}
       >
-        <Link to={`${id}`}><div>{title}</div></Link>
+        {isMainPage
+          ? (
+            <Link to={`${id}`}>
+              {renderTitle}
+            </Link>
+          ) : (
+            renderTitle
+          ) }
         <FinishTime finishTime={finishTime} />
       </Box>
       <BidLabel bid={bid} />
@@ -51,4 +68,5 @@ AuctionItem.propTypes = {
     finishTime: PropTypes.number.isRequired,
     imgUrl: PropTypes.string.isRequired,
   }).isRequired,
+  isMainPage: PropTypes.bool.isRequired,
 };

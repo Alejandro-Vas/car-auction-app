@@ -14,7 +14,7 @@ function MainPage() {
       <Grid container spacing={3}>
         {isSuccess && !isLoading && data?.auctions.map((auction) => (
           <Grid item lg={4} key={auction.id}>
-            <AuctionItem auction={auction} />
+            <AuctionItem auction={auction} isMainPage />
           </Grid>
         ))}
       </Grid>
