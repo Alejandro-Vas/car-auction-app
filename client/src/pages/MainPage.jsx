@@ -17,9 +17,7 @@ function MainPage() {
             <AuctionItem auction={auction} />
           </Grid>
         ))}
-
       </Grid>
-
     </>
   );
 }

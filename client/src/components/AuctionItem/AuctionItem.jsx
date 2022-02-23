@@ -14,7 +14,6 @@ function AuctionItem(props) {
   } = props;
 
   return (
-
     <Box sx={{
       display: 'flex',
       flexDirection: 'column',
@@ -38,7 +37,6 @@ function AuctionItem(props) {
         <FinishTime finishTime={finishTime} />
       </Box>
       <BidLabel bid={bid} />
-
     </Box>
   );
 }
