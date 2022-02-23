@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Box } from '@mui/material';
 import PropTypes from 'prop-types';
 import BidLabel from '../BidLabel/BidLabel';
+import FinishTime from '../FinishTime/FinishTime';
 
 const { IMAGES_BASEPATH } = process.env.CONFIG;
 
@@ -34,7 +35,7 @@ function AuctionItem(props) {
       }}
       >
         <Link to={`${id}`}><div>{title}</div></Link>
-        <div>{finishTime}</div>
+        <FinishTime finishTime={finishTime} />
       </Box>
       <BidLabel bid={bid} />
 
