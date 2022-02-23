@@ -11,9 +11,9 @@ function MainPage() {
     <>
       <div>Main page</div>
       {isLoading && <Spinner />}
-      <Grid container spacing={2}>
+      <Grid container spacing={3}>
         {isSuccess && !isLoading && data?.auctions.map((auction) => (
-          <Grid item md={4} sm={6} xs={12} key={auction.id}>
+          <Grid item lg={4} key={auction.id}>
             <AuctionItem auction={auction} />
           </Grid>
         ))}

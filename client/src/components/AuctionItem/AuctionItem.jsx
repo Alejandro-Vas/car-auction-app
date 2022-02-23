@@ -10,21 +10,49 @@ function AuctionItem(props) {
       title, id, bid, finishTime, imgUrl,
     },
   } = props;
+
   return (
 
     <Box sx={{
-      width: 300,
-      height: 200,
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      width: 375,
+      height: 250,
       backgroundImage: `url(${IMAGES_BASEPATH}${imgUrl})`,
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       borderRadius: 3,
     }}
     >
-      <Link to={`${id}`}><div>{title}</div></Link>
-      <div>{id}</div>
-      <div>{bid}</div>
-      <div>{finishTime}</div>
+      <Box sx={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        padding: 1,
+        backgroundColor: '#F0F0F0',
+      }}
+      >
+        <Link to={`${id}`}><div>{title}</div></Link>
+        <div>{finishTime}</div>
+      </Box>
+      <Box sx={{
+        display: 'flex',
+        justifyContent: 'flex-end',
+
+      }}
+      >
+        <Box sx={{
+          width: 150,
+          height: 30,
+          backgroundColor: '#F0F0F0',
+        }}
+        >
+          Ставка:
+          {' '}
+          {bid}
+        </Box>
+      </Box>
+
     </Box>
   );
 }
