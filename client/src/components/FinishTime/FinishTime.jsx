@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
+import { Box } from '@mui/material';
 
 function FinishTime(props) {
   const { finishTime } = props;
@@ -25,11 +26,11 @@ function FinishTime(props) {
   const secondsPadded = seconds.padStart(2, '0');
 
   return (
-    <div>
+    <Box sx={{ padding: 1 }}>
       {distance > 0
         ? `${minutesPadded}:${secondsPadded}`
-        : 'Аукцион завершен'}
-    </div>
+        : 'Завершен'}
+    </Box>
 
   );
 }

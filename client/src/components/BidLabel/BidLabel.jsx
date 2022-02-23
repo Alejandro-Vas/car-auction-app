@@ -16,7 +16,7 @@ function BidLabel(props) {
         alignItems: 'center',
         width: 'fit-content',
         height: 40,
-        backgroundColor: '#696969',
+        backgroundColor: '#ff1744',
         color: '#FFFFFF',
         borderRadius: 2,
       }}

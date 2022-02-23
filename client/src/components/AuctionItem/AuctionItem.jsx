@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Box } from '@mui/material';
+import { Box, Typography, Button } from '@mui/material';
 import PropTypes from 'prop-types';
 import BidLabel from '../BidLabel/BidLabel';
 import FinishTime from '../FinishTime/FinishTime';
@@ -17,12 +17,6 @@ function AuctionItem(props) {
   const renderWidth = isMainPage ? 375 : 675;
   const renderHeight = isMainPage ? 250 : 400;
 
-  const renderTitle = (
-    <div>
-      {title}
-    </div>
-  );
-
   return (
     <Box sx={{
       display: 'flex',
@@ -39,18 +33,19 @@ function AuctionItem(props) {
       <Box sx={{
         display: 'flex',
         justifyContent: 'space-between',
-        padding: 1,
+        alignItems: 'center',
         backgroundColor: '#F0F0F0',
       }}
       >
-        {isMainPage
-          ? (
-            <Link to={`${id}`}>
-              {renderTitle}
-            </Link>
-          ) : (
-            renderTitle
-          ) }
+        <Button component={Link} to={`${id}`} disabled={!isMainPage}>
+          <Typography
+            variant="h3"
+            fontSize="h6.fontSize"
+          >
+            <Box>{title}</Box>
+          </Typography>
+        </Button>
+
         <FinishTime finishTime={finishTime} />
       </Box>
       <BidLabel bid={bid} />
