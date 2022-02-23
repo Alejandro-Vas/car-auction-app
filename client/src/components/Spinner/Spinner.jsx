@@ -1,14 +1,17 @@
-import { Typography } from '@mui/material';
-import './Spinner.scss';
+import { Box } from '@mui/material';
+import CircularProgress from '@mui/material/CircularProgress';
 
 function Spinner() {
   return (
-    <div className="spinner-wrapper">
-      <div className="spinner" />
-      <Typography variant="h2" fontSize="h4.fontSize" gutterBottom component="div">
-        Загрузка...
-      </Typography>
-    </div>
+    <Box sx={{
+      minHeight: 500,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}
+    >
+      <CircularProgress sx={{ margin: '0 auto' }} size={80} />
+    </Box>
   );
 }
 export default Spinner;
