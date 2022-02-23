@@ -2,17 +2,17 @@ import { useParams, Link } from 'react-router-dom';
 
 function AuctionItemPage() {
   const params = useParams();
-  const prodId = params.id;
+  const { id } = params;
 
   return (
     <>
       <div>
-        Auction Item page
+        Подробная информация об автомобиле
       </div>
       <h2>
         Лот №
         {' '}
-        {prodId}
+        {id}
       </h2>
 
       <Link to="/">

@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
+import Grid from '@mui/material/Grid';
 import { useGetAuctionsListQuery } from '../reducers/auctionsListApi/auctionsListApi';
 import Spinner from '../components/Spinner/Spinner';
+import AuctionItem from '../components/AuctionItem/AuctionItem';
 
 const { POLLING_INTERVAL } = process.env.CONFIG;
 
@@ -8,29 +9,18 @@ function MainPage() {
   const { data, isLoading, isSuccess } = useGetAuctionsListQuery('', { pollingInterval: POLLING_INTERVAL });
   return (
     <>
-      <div>
-        Main page
+      <div>Main page</div>
+      <Grid container spacing={2}>
 
         {isLoading && <Spinner />}
-        {isSuccess && !isLoading && data?.auctions.map((el) => (
-          <div key={el.title}>
-            <div>{el.title}</div>
-            <div>{el.id}</div>
-            <div>{el.bid}</div>
-            <div>{el.finishTime}</div>
-
-            <Link to={`${el.id}`}>
-              <button
-                type="button"
-              >
-                подробнее
-              </button>
-            </Link>
-          </div>
+        {isSuccess && !isLoading && data?.auctions.map((auction) => (
+          <Grid item md={4} sm={6} xs={12} key={auction.id}>
+            <AuctionItem auction={auction} />
+          </Grid>
         ))}
 
-      </div>
-      <div />
+      </Grid>
+
     </>
   );
 }

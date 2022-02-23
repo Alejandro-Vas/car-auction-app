@@ -5,7 +5,7 @@ function Spinner() {
   return (
     <div className="spinner-wrapper">
       <div className="spinner" />
-      <Typography variant="subtitle1" fontSize="subtitle1.fontSize" gutterBottom component="div">
+      <Typography variant="h2" fontSize="h4.fontSize" gutterBottom component="div">
         Загрузка...
       </Typography>
     </div>
