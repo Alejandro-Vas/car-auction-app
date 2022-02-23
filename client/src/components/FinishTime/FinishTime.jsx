@@ -10,8 +10,9 @@ function FinishTime(props) {
     return () => clearInterval(timer);
   }, []);
 
+  // TODO -> decompose calculating logic to utils
   const end = new Date(finishTime);
-  const distance = now - end;
+  const distance = end - now;
 
   const SECOND = 1000;
   const MINUTE = SECOND * 60;
@@ -20,11 +21,16 @@ function FinishTime(props) {
   const minutes = `${Math.floor((distance % HOUR) / MINUTE)}`;
   const seconds = `${Math.floor((distance % MINUTE) / SECOND)}`;
 
+  const minutesPadded = minutes.padStart(2, '0');
+  const secondsPadded = seconds.padStart(2, '0');
+
   return (
-    // <div>{distance > 0 ? `${minutes}:${seconds}` : 'Аукцион завершен'}</div>
     <div>
-      {`${minutes.padStart(2, '0')}:${seconds.padStart(2, '0')}`}
+      {distance > 0
+        ? `${minutesPadded}:${secondsPadded}`
+        : 'Аукцион завершен'}
     </div>
+
   );
 }
 export default FinishTime;
