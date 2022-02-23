@@ -17,12 +17,14 @@ function FinishTime(props) {
   const MINUTE = SECOND * 60;
   const HOUR = MINUTE * 60;
 
-  const minutes = Math.floor((distance % HOUR) / MINUTE);
-  const seconds = Math.floor((distance % MINUTE) / SECOND);
+  const minutes = `${Math.floor((distance % HOUR) / MINUTE)}`;
+  const seconds = `${Math.floor((distance % MINUTE) / SECOND)}`;
 
   return (
     // <div>{distance > 0 ? `${minutes}:${seconds}` : 'Аукцион завершен'}</div>
-    <div>{`${minutes}:${seconds}`}</div>
+    <div>
+      {`${minutes.padStart(2, '0')}:${seconds.padStart(2, '0')}`}
+    </div>
   );
 }
 export default FinishTime;
