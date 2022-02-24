@@ -13,7 +13,9 @@ function MainPage() {
 
   const filteredData = data?.auctions.filter((el) => el.title
     .toLowerCase()
-    .includes(searchQuery.toLowerCase()));
+    .includes(searchQuery
+      .toLowerCase()
+      .trim()));
 
   return (
     <>
