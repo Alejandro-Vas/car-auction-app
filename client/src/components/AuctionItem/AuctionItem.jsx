@@ -37,7 +37,11 @@ function AuctionItem(props) {
         backgroundColor: '#F0F0F0',
       }}
       >
-        <Button component={Link} to={`${id}`} disabled={!isMainPage}>
+        <Button
+          component={Link}
+          to={`${id}`}
+          disabled={!isMainPage}
+        >
           <Typography
             variant="h3"
             fontSize="h6.fontSize"
@@ -45,7 +49,6 @@ function AuctionItem(props) {
             <Box>{title}</Box>
           </Typography>
         </Button>
-
         <FinishTime finishTime={finishTime} />
       </Box>
       <BidLabel bid={bid} />
