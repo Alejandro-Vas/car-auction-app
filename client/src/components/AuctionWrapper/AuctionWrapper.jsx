@@ -12,6 +12,7 @@ function AuctionWrapper(props) {
     id,
     { pollingInterval: POLLING_INTERVAL },
   );
+
   return (
     <>
       {isLoading && <Spinner />}
@@ -23,10 +24,20 @@ function AuctionWrapper(props) {
         >
           Подробная информация об автомобиле
           <br />
-          <b>{data?.auction.title}</b>
+          <b>{data.auction?.title}</b>
         </Typography>
         <Box mb={3}>
           <AuctionItem auction={data.auction} isMainPage={false} />
+          <Typography
+            variant="h5"
+            fontSize="h5.fontSize"
+          >
+            Пробег
+            {' '}
+            {data.auction?.mileage}
+            {' '}
+            км
+          </Typography>
         </Box>
       </>
       )}
