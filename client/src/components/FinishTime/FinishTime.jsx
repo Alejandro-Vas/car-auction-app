@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import { Box } from '@mui/material';
+import unixTimeToEndConverter from '../../utils/unixTimeToEndConverter';
 
 function FinishTime(props) {
   const { finishTime } = props;
@@ -11,24 +12,14 @@ function FinishTime(props) {
     return () => clearInterval(timer);
   }, []);
 
-  // TODO -> decompose calculating logic to utils
   const end = new Date(finishTime);
   const distance = end - now;
-
-  const SECOND = 1000;
-  const MINUTE = SECOND * 60;
-  const HOUR = MINUTE * 60;
-
-  const minutes = `${Math.floor((distance % HOUR) / MINUTE)}`;
-  const seconds = `${Math.floor((distance % MINUTE) / SECOND)}`;
-
-  const minutesPadded = minutes.padStart(2, '0');
-  const secondsPadded = seconds.padStart(2, '0');
+  const timeToEnd = unixTimeToEndConverter(now, end);
 
   return (
     <Box sx={{ padding: 1 }}>
       {distance > 0
-        ? `${minutesPadded}:${secondsPadded}`
+        ? timeToEnd
         : 'Завершен'}
     </Box>
 
