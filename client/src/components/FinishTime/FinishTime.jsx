@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box } from '@mui/material';
 import unixTimeToEndConverter from '../../utils/unixTimeToEndConverter';
 
-function FinishTime(props) {
+const FinishTime = React.memo((props) => {
   const { finishTime } = props;
   const [now, setNow] = useState(new Date());
 
@@ -27,7 +27,7 @@ function FinishTime(props) {
     </Box>
 
   );
-}
+});
 export default FinishTime;
 
 FinishTime.propTypes = {

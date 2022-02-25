@@ -1,7 +1,8 @@
 import { Box } from '@mui/material';
 import PropTypes from 'prop-types';
+import React from 'react';
 
-function BidLabel(props) {
+const BidLabel = React.memo((props) => {
   const { bid } = props;
   return (
     <Box sx={{
@@ -32,7 +33,7 @@ function BidLabel(props) {
     </Box>
 
   );
-}
+});
 export default BidLabel;
 
 BidLabel.propTypes = {
