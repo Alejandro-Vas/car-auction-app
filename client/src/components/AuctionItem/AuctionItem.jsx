@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import { Box, Typography, Button } from '@mui/material';
 import PropTypes from 'prop-types';
+import React from 'react';
 import BidLabel from '../BidLabel/BidLabel';
 import FinishTime from '../FinishTime/FinishTime';
 
 const { IMAGES_BASEPATH } = process.env.CONFIG;
 
-function AuctionItem(props) {
+const AuctionItem = React.memo((props) => {
   const {
     auction: {
       title, id, bid, finishTime, imgUrl,
@@ -54,7 +55,7 @@ function AuctionItem(props) {
       <BidLabel bid={bid} />
     </Box>
   );
-}
+});
 
 export default AuctionItem;
 
