@@ -47,5 +47,5 @@ function AuctionWrapper(props) {
 export default AuctionWrapper;
 
 AuctionWrapper.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };

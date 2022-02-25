@@ -55,7 +55,7 @@
     "redux-promise": "^0.6.0",
     "redux-thunk": "^2.4.1",
     "regenerator-runtime": "^0.13.9",
-    "sass": "^1.49.8"
+    "remove": "^0.1.5"
   },
   "devDependencies": {
     "@babel/core": "^7.17.0",
@@ -71,7 +71,6 @@
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
-    "css-loader": "^6.6.0",
     "eslint": "8.8.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.25.4",
@@ -85,7 +84,6 @@
     "nodemon-webpack-plugin": "^4.7.1",
     "sass-loader": "^12.6.0",
     "silver-commit": "^0.1.4",
-    "style-loader": "^3.3.1",
     "url-loader": "^4.1.1",
     "webpack": "^5.68.0",
     "webpack-bundle-analyzer": "^4.5.0",
