@@ -17,8 +17,8 @@ const BidLabel = React.memo((props) => {
         alignItems: 'center',
         width: 'fit-content',
         height: 40,
-        backgroundColor: '#ff1744',
-        color: '#FFFFFF',
+        backgroundColor: 'label.background',
+        color: 'label.main',
         borderRadius: 2,
       }}
       >

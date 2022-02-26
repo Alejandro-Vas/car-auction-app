@@ -8,7 +8,14 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import store from './store';
 import App from './App';
 
-const theme = createTheme();
+const theme = createTheme({
+  palette:
+   {
+     primary: { main: '#0971f1' },
+     label: { main: '#FFFFFF', background: '#ff1744' },
+     auctionItem: { background: '#F0F0F0' },
+   },
+});
 
 render(
   <ThemeProvider theme={theme}>

@@ -35,7 +35,7 @@ const AuctionItem = React.memo((props) => {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        backgroundColor: '#F0F0F0',
+        backgroundColor: 'auctionItem.background',
       }}
       >
         <Button
