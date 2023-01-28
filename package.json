@@ -1,9 +1,9 @@
 {
-  "name": "front-test-app",
-  "version": "0.0.1",
-  "description": "operator front app",
+  "name": "car-auction-app",
+  "version": "1.0",
+  "description": "car-auction-app",
   "private": true,
-  "author": "cartech team",
+  "author": "a.vasin",
   "license": "ISC",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,10 +14,6 @@
     "lint": "eslint ./client/src --ext .jsx --ext .js",
     "prepare": "husky install"
   },
-  "keywords": [
-    "carprice",
-    "test"
-  ],
   "config": {
     "commit-message-validator": {
       "pattern": "^(.+\\s\\|\\s)?(fix|feat|build|ci|chore|docs|perf|refactor|revert|style|test)(\\(.+\\))?:\\s.*",
