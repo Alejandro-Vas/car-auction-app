@@ -3,8 +3,7 @@ import { Button } from '@mui/material';
 import AuctionWrapper from '../components/AuctionWrapper/AuctionWrapper';
 
 function AuctionItemPage() {
-  const params = useParams();
-  const { id } = params;
+  const { id } = useParams();
 
   return (
     <>
